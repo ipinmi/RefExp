@@ -1,38 +1,71 @@
-'''
-- extract input in batches 
-- time loop for the batches
-'''
-
 import ollama
-import csv
+import pandas as pd
 
-# Initialize the Ollama client
-client = ollama.Client()
 
-# Select the appropriate model for task (Vision-Language or Language only)
-model = "llama3.2"  
+def batch_annotate_csv(csv_path, modelName, batch_size=5):
+    client = ollama.Client()
 
-#Load csv file containing referring expressions (D-Cube)
-#with open('category_annotations.csv', "r", encoding="utf-8") as rawfile:
- #   reader = csv.DictReader(rawfile)
+    # Annotated data
+    annotated_data = []
 
-#Prompt for annotation task 
-prompt = [
-    {
-        'role': 'system',
-        'content': "You are an expert data annotator in the field of Natural Language Processing and Computer Vision and you are consistent with your produced labels for the dataset.",
-    },
-    {
-        'role': 'user',
-        'content': 'Analyze the given referring expressions and find generalizable categories for evaluating a referring expression comprehension models. Justify your label choices for each expression with a brief explanation. Expresssions: [railings being crossed by horses, a horse running or jumping, equestrian riders helmet, outdoor dog led by rope, a dog being touched]',
-    },
-]
+    annotation_df = pd.read_csv(csv_path)
 
-# Send prompt to model for response
-response = client.chat(model=model, messages=prompt)
+    for i in range(0, len(annotation_df), batch_size):
+        batch = annotation_df["cleaned_expression"].iloc[i : i + batch_size]
 
-# Print the response from the model
-print(response['message']['content'])
+        # Create base batch prompt
+        prompt = "Analyze these texts and find broad visual categories for how the referred objects are referred to and give a brief justification (1-2 sentences):\n"
 
-#Save response to CSV file containing annotations
-# create file, if exists, append to file 
+        prompt_examples = "Here are some examples: The woman's hat | Spatial | Indicates that the hat is on the woman's head.\n"
+        prompt_examples += (
+            "The red apple | Attribute | Indicates the color of the apple.\n"
+        )
+        prompt_examples += (
+            "The dancing man | Action | Indicates that the man is performing a dance.\n"
+        )
+        prompt += prompt_examples
+
+        # Add batch items to the prompt
+        prompt += "Here are the texts:\n"
+        for j, text in enumerate(batch):
+            prompt += f"{i+j+1}: {text}\n"
+
+        prompt += "Respond strictly in this format:\n X: [text] | [category] | [justification] with no other comments.\n"
+
+        response = client.chat(
+            model=modelName, messages=[{"role": "user", "content": prompt}]
+        )
+
+        # Process the response
+        response_content = response["message"]["content"]
+        responses = response_content.strip().split("\n")
+        for line in responses:
+            parts = line.split("|")
+            if len(parts) == 3:
+                annotated_data.append(
+                    {
+                        "text": parts[0].strip(),
+                        "category": parts[1].strip(),
+                        "justification": parts[2].strip(),
+                    }
+                )
+
+        # print(response_content)
+        print(
+            f"Processed batch {i//batch_size + 1} of {len(annotation_df)//batch_size + 1}"
+        )
+
+    # Create a DataFrame from the annotated data
+    annotated_df = pd.DataFrame(annotated_data)
+    print(f"Total annotations collected: {len(annotated_df)}")
+
+    # Save the annotated DataFrame to a new CSV file
+    annotated_df.to_csv("labelled_data/annotated_data.csv", index=False)
+
+
+if __name__ == "__main__":
+
+    csv_path = "category_annotations_cleaned.csv"
+    model_name = "gemma3"
+    # annotations = annotate_with_ollama(csv_path, modelName=model_name)
+    batch_annotate_csv(csv_path, modelName=model_name, batch_size=15)

@@ -1,0 +1,423 @@
+text,category,justification
+1: railings being crossed by horses,Animals - Horses,Depicts a specific animal activity – horses navigating a defined space.
+2: a horse running or jumping,Animals - Horses,"Represents a dynamic animal action, highlighting movement and potential athleticism."
+3: equestrian riders helmet,Equipment - Sports,Indicates protective gear associated with a sporting activity (equestrianism).
+4: outdoor dog led by rope,Animals - Dogs,"Shows a domesticated animal under human guidance, typical of pet activities."
+5: a dog being touched,Animals - Dogs,"Represents an interaction between a human and an animal, indicating affection or training."
+6: clothed dog,Animals - Dogs,"Represents a domesticated animal wearing apparel, a common depiction of pets."
+7: basketball in hand,Sports - Basketball,Shows the ball associated with the sport of basketball and a player’s grip.
+8: a basketball player with both feet off the ground,Sports - Basketball,Highlights a key element of basketball – a player executing a jump shot.
+9: player with basketball in the hand,Sports - Basketball,"Similar to 7, focuses on a basketball player holding the ball during a game."
+10: spoon on the plate,Objects - Tableware,Represents a standard piece of tableware used for eating.
+11: coffee cup with coffee,Objects - Beverages,Illustrates a common beverage container filled with coffee.
+12: the nearest dessert to the coffee cup,Objects - Food,"Represents a food item positioned near a beverage, often a pairing."
+13: the bartender who is mixing wine,People - Professions,Depicts a specific job role – a bartender preparing a drink.
+14: a bartender in a suit,People - Professions,"Shows a professional bartender in formal attire, often associated with upscale establishments."
+15: wine glass with wine,Objects - Beverages,"Represents a vessel containing wine, a commonly consumed alcoholic beverage."
+16: a person in aprons,Kitchen Scene,"Focuses on a person engaged in food preparation, indicating a kitchen environment."
+17: pot with food,Kitchen Scene,Represents a central element of a kitchen – cooking and a prepared dish.
+18: a knife being used to cut vegetables,Kitchen Scene,Depicts an action associated with food preparation in a kitchen setting.
+19: striped sofa in the room,Interior Scene,"Describes a furniture item within a room, classifying it as a general interior detail."
+20: a sofa with pillows on it in the room,Interior Scene,"Similar to 19, it’s a piece of furniture in an interior space."
+21: lights on in the room,Interior Scene,"Indicates illumination within an interior space, a key element of any room."
+22: an indoor lying pet,Interior Scene,Represents an animal present within an indoor environment.
+23: a cat on the sofa,Interior Scene,Specifically details a pet’s location and activity within a room.
+24: one pet looking directly at the camera indoors,Interior Scene,"Highlights an animal’s gaze towards the viewer, still within an interior setting."
+25: a bed with patterns in the room,Bedroom Scene,"Indicates a bed within a room, categorizing it as a bedroom feature."
+26: the lamp on the table beside the bed,Bedroom Scene,Describes a lighting fixture within a bedroom context.
+27: pillow placed at the head of the bed,Bedroom Scene,Specifies an element of a bed within a bedroom.
+28: a blackboard full of words in the classroom,Classroom Scene,Shows a writing surface commonly found in educational settings.
+29: a blackboard or whiteboard with something pasted,Classroom Scene,Another representation of a writing surface in a classroom.
+30: child sitting at desks in the classroom,Classroom Scene,Depicts students engaged in learning within a classroom environment.
+31: a person standing in front of bookshelves in the library,People in Library,"This refers to a typical scene within a library setting, depicting a human subject."
+32: the table someone is using in the library,Library Furniture,This describes a functional object within a library environment – a table being utilized.
+33: a person who touches books in the library,People Interacting with Objects,"This depicts a human interaction with a specific object, namely books, within the library."
+34: a person standing in front of the cake counter,People in a Food Setting,"This describes a person in a space related to food, specifically a cake counter."
+35: a square plate full of cakes,Food Item,This describes a specific food item – a plate covered in cakes.
+36: a cake decorated with cream,Food Item,"This details a particular food item, a cake embellished with cream frosting."
+37: incomplete donut,Food Item,"This refers to a partially consumed donut, illustrating a specific food item."
+38: donut with colored granules on the surface,Food Item,This describes a donut with a distinctive feature: colored granules on its surface.
+39: chocolate donut,Food Item,"This identifies a particular type of donut, highlighting its chocolate flavor."
+40: hot dog with vegetables,Food Item,This describes a prepared food item – a hot dog accompanied by vegetables.
+41: hot dog with sauce on the surface,Food Item,"This depicts a hot dog with a visible sauce, indicating a prepared food item."
+42: red sausage,Food Item,This identifies a specific type of food item – a sausage with a red hue.
+43: flowerpot with flowers potted inside,Object with Contents,This describes a container (flowerpot) holding plants (flowers) within it.
+44: monochrome flowerpot,Object,"This specifies a flowerpot with a single color, representing a particular aesthetic quality."
+44: a flowerpot filled with black soil,Object with Contents,"This defines a flowerpot containing soil, highlighting its filled state and color."
+46: apple growing on trees,Fruit/Nature,Depicts a common natural scene of fruit production.
+47: red complete apple,Fruit,"Shows a single, whole apple, representing a basic fruit object."
+48: apple with a stalk,Fruit,"Illustrates an apple with its stem, detailing a specific aspect of the fruit."
+49: a woman brushing her teeth,Human Activity,Represents a typical daily personal hygiene routine.
+50: toothbrush held by someone,Personal Item,Displays a toothbrush as an object held by a person.
+51: toilet brush with colored bristles,Household Item,"Shows a cleaning tool with distinct colored bristles, highlighting functionality."
+52: a customer whose hair is being cut by barber,Human Activity/Service,Depicts a customer receiving a haircut from a barber.
+53: a barber at work,Human Activity/Service,Represents a barber actively engaged in their profession.
+54: cloth covering the barber,Human Activity/Service,Illustrates a protective covering worn during a barber’s service.
+55: a plastic toy,Toy,"Presents a generic plastic toy, a common type of children’s toy."
+56: a plush toy,Toy,"Displays a soft, plush toy, another typical children’s toy."
+57: a humanoid toy,Toy,Represents a toy shaped like a human figure.
+58: shopping cart pushed by people in the supermarket,Shopping/Commerce,Shows a shopping cart being maneuvered within a supermarket setting.
+59: shopping cart with people in the supermarket,Shopping/Commerce,Depicts a shopping cart accompanied by shoppers within a supermarket.
+60: shopping cart full of goods,Shopping/Commerce,Illustrates a shopping cart laden with purchased items in a supermarket.
+61: a child wearing a mask,Masks,Represents a specific depiction of a person wearing a mask.
+62: a mask on face with half a face exposed,Masks,Shows a partial mask covering the face.
+63: a mask on face with only eyes exposed,Masks,Depicts a mask that only covers the eyes.
+64: refrigerator with fruit,Appliances,Represents a common household appliance with a food item inside.
+65: a drink bottle in the refrigerator,Appliances,Shows a specific item (a drink bottle) within an appliance.
+66: refrigerator with more than two doors,Appliances,Indicates a refrigerator with an atypical number of doors.
+67: a watch placed on a table or cloth,Timepieces,Represents a watch positioned on a surface.
+68: a watch with three or more watch hands can be seen,Timepieces,Highlights a watch with a complex mechanism (multiple hands).
+69: a watch with one or more small dials,Timepieces,Illustrates a watch featuring dials for adjusting time.
+70: clothes hanger,Accessories,Represents a typical item used for hanging clothing.
+71: a piece of clothing hanging on the hanger,Accessories,Shows an item of clothing suspended on a hanger.
+72: a piece of clothing worn on plastic models,Accessories,Demonstrates clothing being used as a prop for models.
+73: leather bag with glossy surface,Bags,Describes a bag made of leather with a reflective finish.
+74: backpack,Bags,"Identifies a bag, specifically a backpack."
+75: open package,Packaging,Represents an item in an unpacked state.
+76: a fish held by people,People & Animals,Depicts a common activity involving the interaction between humans and aquatic life.
+77: a person who is fishing with a fishing rod,Outdoor Activities,"Shows a typical recreational activity performed outdoors, specifically fishing."
+78: a fisherman standing on the shore with his body soaked in water,Outdoor Activities,"Represents a fisherman engaged in his work, highlighting the environment and potentially difficult conditions."
+79: camera hold on someones shoulder,Photography & Equipment,"Illustrates the act of capturing images, typically using a shoulder-mounted camera."
+80: a person being interviewed,Social Interaction & Media,"Represents an interaction between a person and an interviewer, commonly seen in media contexts."
+81: a person with microphone hold in hand,Social Interaction & Media,"Shows a person holding a microphone, signifying communication or an interview situation."
+82: one open oven,Kitchen Appliances,Depicts a functional kitchen appliance – an oven – in its open state.
+83: food in the oven,Kitchen Appliances,"Displays food within an oven, suggesting cooking or baking is in progress."
+84: oven integrated with cabinet,Kitchen Appliances,"Represents a built-in kitchen appliance, seamlessly integrated into a cabinetry unit."
+85: a mask on the face of a doctor or nurse,Healthcare & Safety,Symbolizes medical professionals and the protective measure of wearing a mask.
+86: a doctor or nurse wearing green surgical clothes,Healthcare & Safety,"Shows healthcare personnel wearing standard protective attire, indicating a clinical setting."
+87: a person wearing surgical clothes and a mask,Healthcare & Safety,Combines elements of protection and professional medical attire.
+88: a dancing woman with her knees bare,Performance & Movement,"Represents a dancer engaged in a movement activity, revealing a specific body posture."
+89: man dancing,Performance & Movement,Simple depiction of a person engaged in the act of dancing.
+90: skirt worn by a dancer,Performance & Movement,"Highlights a garment worn during dance performance, specifically a skirt."
+91: a person playing guitar on stage,Live Performance,"Depicts a musician performing on a stage, representing entertainment."
+92: a microphone stand used by people,Stage Equipment,"Shows a common stage accessory, highlighting support for vocal performances."
+93: guitar carried by person on stage,Live Performance,"Reinforces the image of a musician performing live, with the guitar as a key instrument."
+94: glasses on the face of a person on the stage,Stage Performance,Illustrates a detail of a performer’s appearance during a stage event.
+95: a microphone on the stage,Stage Equipment,"Another common stage accessory, specifically for amplifying sound."
+96: a person standing on the stage with open mouth,Live Performance,Represents a performer singing or speaking on stage.
+97: aircraft on the ground,Transportation,"Displays aircraft situated on a ground surface, indicating a transportation setting."
+98: aircraft in the air,Transportation,"Shows aircraft in flight, demonstrating aerial transportation."
+99: a person standing next to the plane,Transportation,"Depicts a human observer adjacent to an aircraft, representing proximity to transportation."
+100: cable car hanging in the air,Transportation,"Illustrates a cable car suspended in the air, showcasing aerial transportation."
+101: a person standing on the edge of a funicular,Transportation,"Shows an individual positioned near a funicular, signifying a specific mode of transport."
+102: carriage of funicular,Transportation,Represents the interior compartment of a funicular railway car.
+103: an animal under the command of human,Animal Training,"Displays an animal responding to human guidance, indicating training or control."
+104: an animal on stage,Live Performance,"Highlights an animal present during a stage event, potentially part of a show."
+105: a person on the stage and in the air,Live Performance/Aerial Performance,"Combines elements of stage performance with an aerial display, suggesting a complex event."
+106: a person who embraces another person face to face,Human Interaction/Affection,"Represents a close, physical connection between two individuals."
+107: a person holding animals,Human-Animal Interaction,Depicts a direct interaction between a human and animals.
+108: an animal holding another animal,Animal Interaction,Shows a reciprocal interaction or carrying behavior between animals.
+109: woman in wedding dress next to a man in suit,Social Event/Formal Occasion,"Illustrates a scene associated with a formal event, likely a wedding."
+110: man in suit next to a woman in wedding dress,Social Event/Formal Occasion,"Mirrors 109, depicting the same formal occasion from a different perspective."
+111: flowers in the hands of a woman in white skirt,Gift Giving/Ceremony,"Represents a gift, traditionally given at weddings or celebratory events."
+112: christmas tree full of decorations,Holiday/Celebration,Symbolizes the holiday of Christmas and its associated decorations.
+113: a person wearing santa claus clothes,Holiday/Celebration,Represents Santa Claus and the holiday of Christmas.
+114: bag carried by santa claus on the back or in the hand,Holiday/Celebration,Depicts Santa Claus carrying his traditional sack filled with gifts.
+115: a pen on written paper,Writing/Communication,Represents the act of writing and the tools used for it.
+116: written paper,Writing/Communication,Represents the medium upon which writing is performed.
+117: a person sitting with a pen in his hand,Writing/Communication,Shows a person engaged in the act of writing.
+118: a person lying on the billiard table,Recreation/Sports,Represents a recreational activity – playing billiards.
+119: a billiard club held in a persons hand,Recreation/Sports,Demonstrates the use of a billiard club during the game.
+110: a billiard ball touched by a billiard stick,Recreation/Sports,Illustrates the action of playing billiards – striking the ball.
+121: a chess board surrounded by people,Board Games & Social Interaction,"This image depicts a group of people engaged with a chess game, highlighting social interaction around a board game."
+122: a person around the chessboard,Board Games & Social Interaction,"This image focuses solely on a single individual interacting with a chessboard, illustrating the game itself."
+123: chess piece of horse head,Board Games & Objects,"This is a specific component of a chess set, representing a particular chess piece."
+124: computer in front of people at the conference table,Business & Technology,"This image shows a technologically-focused setting – a conference table with computers, suggesting business or professional activity."
+125: a person sitting at the conference table,Business & Professional Settings,This captures a standard scenario of a person engaged in a meeting or discussion at a conference table.
+126: white conference table,Furniture & Interiors,"This identifies a specific type of furniture – a white conference table, focusing on its visual characteristics."
+127: flower ball on the hands of cheerleaders,Sports & Performance,"This depicts cheerleaders holding a floral arrangement, signifying a celebratory or performance-related context in sports."
+128: the cheerleader who was lifted,Sports & Performance,"This shows a cheerleader being lifted by others, representing a characteristic element of cheerleading routines."
+129: a person trampled by cheerleaders,Sports & Performance,"This image showcases a potentially hazardous aspect of cheerleading, where a person is being inadvertently stepped on."
+130: a baseball bat held in the hand,Sports & Equipment,"This identifies a key piece of sporting equipment – a baseball bat, central to the game."
+131: an oversized glove worn on the left hand of a baseball player,Sports & Equipment,This image highlights a specific piece of sports equipment: a large baseball glove worn by a player.
+132: a baseball player ready to bat,Sports & Performance,"This captures a moment in baseball where a player is poised to hit the ball, signifying a key action within the sport."
+133: a person who attacks each other in football helmets,Sports & Conflict,"This depicts a violent encounter within football, highlighted by the use of helmets."
+134: white football helmet,Sports & Equipment,"This is a particular item of sports equipment, a white football helmet, emphasizing its color and type."
+135: a person running in a football helmet,Sports & Performance,"This shows an individual actively participating in football while wearing a helmet, signifying movement and safety."
+136: a running person in white stockings,Sportswear/Athletic Activity,"This describes a person engaged in physical activity, specifically highlighted by the stockings."
+137: an athlete wearing white stockings on the green field,Sportswear/Athletic Activity,"This expands on the previous description, explicitly identifying the subject as an athlete and setting the scene."
+138: a soccer player with a soccer at his feet on the green field,Sport/Soccer,This specifies the activity as soccer and presents the equipment relevant to the sport.
+139: a tennis racket held by someone on the tennis court,Sport/Tennis,This identifies the sport as tennis and describes the equipment being held.
+140: a person who wears a hat and holds a tennis racket on the tennis court,Sport/Tennis,This reiterates the tennis context and adds a detail about the individual's attire.
+141: a person with tennis rackets and feet off the ground,Sport/Tennis,This focuses on a specific action (jumping) within the context of tennis.
+142: a red table tennis racket held by someone,Sport/Table Tennis,This describes a particular type of racket and its holder within the sport of table tennis.
+143: table tennis over the table,Sport/Table Tennis,This captures the action of playing table tennis.
+144: a person waving table tennis rackets at the table,Sport/Table Tennis,This illustrates a common action within table tennis.
+145: indoor volleyball flying in the air,Sport/Volleyball,This describes the movement of a volleyball during a game.
+146: the player who is ready to bat with both feet leaving the ground in the room,Sport/Volleyball,This depicts the action of jumping during a volleyball game.
+147: indoor volleyball players with hands raised,Sport/Volleyball,This shows a typical action performed by volleyball players.
+148: ski under the feet of a person,Sport/Skiing,This describes the equipment and activity involved in skiing.
+149: a person skiing,Sport/Skiing,This presents a simple depiction of a person engaged in skiing.
+150: a skier standing in the snow,Sport/Skiing,This illustrates a person participating in skiing and the environment of the activity.
+151: a person standing on the surfboard,Water Sports,This image depicts a common activity involving a surfboard and a person's stance.
+152: a surfboard on the beach,Water Sports,This refers to a key piece of equipment used in the water sport.
+153: surfboard touched by human hands,Water Sports,"This highlights direct human interaction with the surfboard, a central element of the sport."
+154: an upsidedown gymnast,Gymnastics,"This clearly shows a gymnast performing a specific, recognizable maneuver."
+155: a gymnast who touches the bar,Gymnastics,This describes a fundamental action in the sport of gymnastics.
+156: an athlete holding the rings with both hands,Gymnastics,This represents the standard position for performing the rings exercise.
+157: a smiling person on the swing,Recreation,This represents a typical scene of someone enjoying a swing.
+158: swing bench,Recreation,This identifies the physical object supporting the swinging action.
+159: child on the swing,Recreation,This shows a common recreational activity involving a swing.
+160: a person jumping into the pool,Water Sports,This illustrates a common activity involving entering water.
+161: a toy in the swimming pool,Water Sports,This depicts a common object found in or around a swimming pool.
+162: a person who only shows the head in the pool,Water Sports,This indicates a specific position a swimmer might take in the water.
+163: wild lioness,Wildlife,This identifies a specific animal – a lioness – in its natural habitat.
+164: a male lion with a mane,Wildlife,This details a specific animal – a male lion – characterized by a prominent mane.
+165: a lion lying in the wild,Wildlife,This depicts a lion resting in a natural environment.
+166: parrot on human head,Birds on Humans,Depicts a bird perched directly on a person's head.
+167: parrot eating,Parrot Behavior,Shows a parrot engaged in the action of eating.
+168: parrot on human shoulder,Birds on Humans,Illustrates a bird positioned on a person's shoulder.
+169: a camel with single hump,Camel Anatomy,Represents a camel characterized by its distinct one-humped back.
+170: camel with double humps,Camel Anatomy,Depicts a camel distinguished by its two humps.
+171: a prone camel,Camel Posture,Shows a camel lying down on its side.
+172: redcrowned crane with wings,Birds,Presents a redcrowned crane with its wings extended.
+173: redcrowned crane standing on the ground,Birds,Illustrates a redcrowned crane in a standing position.
+174: redcrowned crane with head lower than body,Birds,Displays a redcrowned crane with its head positioned below its body.
+175: a giant panda eating,Panda Behavior,Shows a giant panda engaged in the action of eating.
+176: a giant panda on its four feet,Panda Behavior,Illustrates a giant panda standing on all four limbs.
+177: red panda on the stomach,Panda Behavior,Depicts a red panda lying on its stomach.
+178: an autosalon girl leaning against the car,Human Interaction with Vehicles,Shows a person interacting with a car in a casual pose.
+179: car contacted by an autosalon girl,Human Interaction with Vehicles,Presents a car with a person leaning against it.
+178: an autosalon girl in a skirt,Human Interaction with Vehicles,Shows a person wearing a skirt while interacting with a car.
+181: lion dance coat,Performing Arts/Costume,Represents a specific costume element within a traditional performance.
+182: person in the lion dance clothes,Performing Arts/Human Figure,Shows a human participant wearing the lion dance costume.
+183: an upright lion dance,Performing Arts/Animal Representation,Depicts a stylized representation of a lion dance.
+184: rock climber in short,Sports/Human Figure,Illustrates a rock climber engaged in the activity.
+185: climbers helmet,Sports/Equipment,Highlights a protective piece of equipment used by rock climbers.
+186: barearmed climber,Sports/Human Figure,"Shows a rock climber without arm coverings, emphasizing their physicality."
+187: torch held by a person,Events/Human Figure,"Represents a person carrying and holding a torch, likely for a spectacle."
+188: person holding a torch,Events/Human Figure,"Similar to 187, but focuses on the act of holding the torch."
+189: burning torch,Events/Object,"Illustrates a torch in the process of burning, adding visual interest."
+190: a butterfly with flat wings,Nature/Animal,Characterized by its specific wing shape and represents a butterfly.
+191: a butterfly resting on flowers,Nature/Animal,"Depicts a butterfly in a natural setting, specifically resting on flowers."
+192: a butterfly with folded wings resting on a leaf,Nature/Animal,"Shows a butterfly with folded wings, suggesting rest, on a leaf."
+193: airplane with a smoke trail for show,Transportation/Aircraft,"Represents an airplane creating a visual effect, likely for a demonstration."
+194: the aircraft at the front of the multiaircraft performance array,Transportation/Aircraft,Details a specific aircraft position within a large-scale aviation display.
+195: a plane flying to the right,Transportation/Aircraft,Represents a plane's movement and direction – flying to the right.
+196: a dog with a frisbee in its mouth,Animals - Sports,Represents an animal engaging in a recreational activity.
+197: person with frisbee,People - Sports,Depicts a human actively using a frisbee.
+198: frisbee in the air,Objects - Action,"Shows a frisbee in motion, representing an airborne object."
+199: a golfer in a hat,People - Sports,"Illustrates a person playing golf, highlighting a key element of the sport."
+200: a person with golf clubs,People - Sports,Represents a person holding and utilizing golf clubs.
+201: golf in the air,Objects - Action,"Similar to 198, this showcases golf equipment in flight."
+202: a helicopter flying in the air,Vehicles - Action,"Displays a helicopter in motion, signifying aerial transport."
+203: helicopter with door open,Vehicles - Detail,Focuses on a specific aspect of the helicopter – the open door.
+204: helicopter viewed from the bottom,Vehicles - Perspective,Illustrates a particular viewpoint of the helicopter.
+205: a well on the ground with its cover open,Objects - Utility,Represents a utility structure (a well) with its access cover exposed.
+206: well with cover on the ground,Objects - Utility,"Mirror image of 205, showcasing the well and its cover."
+207: well cover with text on the ground,Objects - Detail,Highlights a specific detail – text on the well cover.
+208: mailbox marked with numbers,Objects - Utility,"Depicts a mailbox with numerical markings, likely for addressing."
+209: red mailbox,Objects - Color,Represents a mailbox colored red.
+210: green mailbox,Objects - Color,Represents a mailbox colored green.
+211: horned deer,Mammal - Ungulate,"Depicts a specific type of deer, categorized by its prominent horns."
+212: deer bowing to eat grass,Mammal - Ungulate,Shows a deer in a specific behavior (bowing) related to feeding.
+213: running deer,Mammal - Ungulate,"Represents a deer in motion, highlighting its movement."
+214: crouching kangaroo,Mammal - Marsupial,"Illustrates a kangaroo in a low, resting position."
+215: standing kangaroo,Mammal - Marsupial,"Displays a kangaroo in a typical upright, stationary stance."
+216: a kangaroo that has physical contact with another kangaroo,Mammal - Marsupial,"Shows interaction between two kangaroos, a social behavior."
+217: woodpecker on the side of the trunk,Bird,"Represents a woodpecker in its natural habitat, specifically on a tree."
+218: woodpecker pecking,Bird,Illustrates the woodpecker’s characteristic action of pecking.
+219: a woodpecker with only its head exposed,Bird,"Shows a unique posture of the woodpecker, with only its head visible."
+220: flying eagle,Bird,"Represents an eagle in flight, showcasing its aerial capabilities."
+221: eagle standing on the branch,Bird,"Displays an eagle in a stationary position, typically perched on a branch."
+222: an eagle with a white head,Bird,Highlights a specific physical characteristic of the eagle (white head).
+223: halfbody dolphin on the water,Marine Mammal,Depicts a dolphin partially submerged in the water.
+224: a dolphin completely out of the water,Marine Mammal,Shows a dolphin fully emerged from the water.
+225: a dolphin doing the same action as other dolphins,Marine Mammal,Indicates a dolphin engaging in a shared behavior within a group.
+226: a seal in the water,Aquatic Animals,The description explicitly states the seal is located within the water.
+227: a seal on the shore,Coastal Animals,"The description indicates the seal is situated on land, adjacent to the water."
+228: a seal facing up to the sky,Animal Pose,The seal's orientation suggests a deliberate gaze upwards.
+229: peacock with open screen,Artificial Display,"The presence of a ""screen"" alongside the peacock indicates a staged or artificial element."
+230: fake peacock,Artificial Display,"The term ""fake"" directly implies the peacock is not a natural, real animal."
+231: peacock standing on the grass,Animal Pose,The description describes the peacock's posture in an outdoor setting.
+232: black swan with head facing back,Animal Pose,The swan’s head position is a distinctive characteristic.
+233: white swan in the water,Aquatic Animals,The description clearly establishes the swan’s location as being within the water.
+234: flying swan,Animal Movement,The description references the swan’s action of flying.
+235: hippo with open mouth in the water,Animal Pose,The hippo's open mouth in the water suggests an expressive or perhaps feeding posture.
+236: hippo standing on the bank,Animal Pose,The hippo’s position on the “bank” indicates a land-based location near the water.
+237: hippo in potential water,Animal Location,"The phrasing “potential water” suggests the hippo is near, but not fully submerged."
+238: you can see the moon on the crater,Celestial Object,The sentence describes the observation of the moon in a specific location (a crater).
+239: partially blocked moon,Celestial Object,The phrase “partially blocked” indicates a visible obstruction of the moon.
+238: a house illuminated by the moon,Lighting Effect,The description highlights the effect of moonlight on a building.
+241: a man in dark glasses,People with eyewear,"This describes a person wearing sunglasses, a common form of eye protection."
+242: a pair of sunglasses with eyes exposed on the face,Eyewear,This explicitly details a pair of sunglasses and their positioning on a face.
+243: a woman with dark glasses showing her eyes,People with eyewear,"Similar to 241 and 242, it highlights a person wearing dark glasses."
+244: otter in water,Animals – Aquatic,This identifies an otter as an animal inhabiting a water environment.
+245: otter on the ground,Animals – Terrestrial,"This describes an otter located on land, contrasting with the aquatic otter."
+246: an otter with its face up to the sky,Animals – Aquatic,"Again, an otter, but with a specific posture suggesting interaction with the environment."
+247: the woman who is hitting the ball in beach volleyball,Human Activity – Sports,This describes a specific action – hitting a ball – within a sporting context.
+248: volleyball hit on the beach,Human Activity – Sports,This is a descriptive term for the act of hitting the volleyball on a beach.
+249: volleyball players on the beach with their feet off the ground,Human Activity – Sports,This describes a specific action within a beach volleyball game.
+250: a person who buy things from the food truck on the street,Human Activity – Commerce,This identifies a person engaging in a commercial transaction at a food truck.
+251: a street food cart with an umbrella,Human Activity – Commerce,This describes a mobile food vendor and its associated equipment.
+252: staff in the food truck on the street,Human Activity – Commerce,This refers to the individuals working within the food truck operation.
+253: a person who plays music with musical instrument surrounded by spectators on the street,Human Activity – Entertainment,This depicts a musician performing for an audience on a street.
+254: a person performing acrobatics surrounded by street audience,Human Activity – Entertainment,"This describes a performer engaging in acrobatic feats, with a surrounding audience."
+255: a boxer wearing boxing gloves who is defending,Human Activity – Sport,This identifies a boxer engaged in the defensive action within a boxing match.
+256: an attacking boxer wearing boxing gloves,Combat Sports,"Represents a direct, aggressive sporting activity involving physical confrontation."
+257: the referee presiding over the boxing match,Sports Officials,Depicts the authority figure overseeing a competitive sporting event.
+258: a running dog pulling a sled,Winter Sports,Shows a recreational activity utilizing dogs for transportation and competition in snowy conditions.
+259: a sled pulled by a dog,Winter Sports,"Mirrors 258, emphasizing the dog’s role as a vehicle-pulling animal in winter sports."
+260: a person on dogsleds,Winter Sports,"Presents a more complete image of the activity, focusing on the participant."
+261: an adult athlete with naked upper body in places with pools,Water Sports,"Represents a competitive swimming event, highlighting the athletes' exposure to the water."
+262: water polo player with ball,Water Sports,Illustrates a core element of water polo – a player holding and maneuvering the ball.
+263: the swimming cap on the head of a water polo player,Water Sports,Details a specific piece of equipment used in water polo to enhance performance and visibility.
+264: barbell lifted above the head,Strength Training,"Symbolizes a key movement in weightlifting, showcasing the athlete’s power and technique."
+265: barbell on the chest,Strength Training,"Depicts another standard pose in weightlifting, focused on stability and force generation."
+266: a weightlifter with barbell below the lower body,Strength Training,Shows a specific technique used in weightlifting to balance and prepare for a lift.
+267: the wooden sword in the hand of a kendo player,Martial Arts,Represents a fundamental weapon used in the Japanese martial art of kendo.
+268: a fencing athlete wearing a helmet,Combat Sports,Highlights the protective equipment necessary for a combat sport like fencing.
+269: a kendo player in battle with another person,Martial Arts,"Visualizes the combative aspect of kendo, showing a duel between two practitioners."
+270: referee of taekwondo match,Sports Officials,Indicates a presiding official within a competitive taekwondo event.
+271: a taekwondo athlete wearing helmets,Sports/Martial Arts,Depicts an athlete engaged in a sport requiring protective headgear.
+272: a taekwondo athlete who is kicking,Sports/Martial Arts,"Illustrates a specific action within taekwondo, highlighting movement and technique."
+273: a kite for kite surfing,Water Sports,Represents a key piece of equipment used in the sport of kite surfing.
+274: a person who is surfing kites,Water Sports,Shows individuals participating in the activity of kite surfing.
+275: surfboard in kite surfing,Water Sports,"Indicates the presence of a surfboard, an essential element of kite surfing."
+276: partially damaged car,Accidents/Vehicles,Represents a vehicle involved in an accident or collision.
+277: a motorcycle lying on the ground,Accidents/Vehicles,Displays a vehicle that has suffered damage and is in an overturned position.
+278: overturned car,Accidents/Vehicles,"Demonstrates a vehicle that has been flipped over, signifying an accident."
+279: person covered with armor,Historical/Military,"Represents someone wearing protective armor, evoking a historical or military context."
+280: the headdress of coser wearing skirt,Costumes/Fashion,"Displays a decorative headpiece, typically associated with cosplay or costume wear."
+281: a bicycle worn by a helmet rider,Transportation/Safety,"Shows a bicycle with a helmet, emphasizing safety precautions for cycling."
+282: a cyclist wearing a helmet on a bicycle,Transportation/Safety,"Highlights a cyclist wearing a helmet, focusing on safety and personal protection."
+283: the goggles on the face of a cyclist wearing a helmet,Transportation/Safety,"Indicates protective eyewear worn by a cyclist, commonly used for safety."
+284: the helmet on the head of the person on the slide,Recreation/Safety,"Depicts a helmet worn by someone using a slide, prioritizing safety during play."
+285: rope track of slide rope,Recreation/Safety,"Shows the support structure of a slide, emphasizing its construction and function."
+286: a pair of gloves on a persons hands on the slide,Yoga/Fitness,"The image depicts someone engaged in a physical activity, specifically on a slide, suggesting a focus on movement and body positioning."
+287: a person who is doing yoga in sleeveless vests,Yoga/Fitness,"The image clearly shows an individual performing yoga poses, emphasizing the clothing worn during this activity."
+288: woman stretching,Yoga/Fitness,"The text describes a woman engaged in a stretching exercise, a core component of yoga and fitness."
+289: a person who sits with his feet folded on a yoga mat,Yoga/Fitness,The description focuses on a specific yoga posture – seated with feet folded – indicating a practice related to yoga.
+290: a person squatting on the walking rope,Fitness/Exercise,"The image portrays a person performing a squatting exercise, often used in fitness routines, and utilizing a rope."
+291: a person who stands upright on the walking rope,Fitness/Exercise,"The text describes an upright posture on a rope, indicating a stability-based exercise or training activity."
+292: a person standing on a rope with one foot,Fitness/Exercise,"The image shows an individual balancing on a rope with one foot, highlighting a skill-based fitness activity."
+293: a person in opentop racing cars,Motorsport,"The description details individuals within open-top racing vehicles, placing it squarely within the context of motorsports."
+294: motorcycle racing car running at a tilt,Motorsport,"The image depicts a racing car at an angle, typical of motorsport photography highlighting speed and dynamics."
+295: an opentop racing car,Motorsport,"The text simply describes an open-top racing car, directly relating to the motorsport category."
+296: blue stop sign with white letter p,Traffic/Safety,"The image represents a standard traffic sign, categorizing it as a symbol of road safety and regulation."
+297: single parking space marked,Infrastructure/Parking,"This describes a specific area designated for parking, belonging to the category of infrastructure and parking."
+298: car in parking space,Infrastructure/Parking,"The image shows a vehicle occupying a designated parking space, fitting into the parking infrastructure category."
+299: diabolo on the rope,Recreation/Skill,The image of a diabolo on a rope illustrates a specific skill-based recreational activity.
+300: diabolo flying in the air,Recreation/Skill,"This describes a diabolo in motion, further emphasizing the skill and performance aspect of the activity."
+301: a person playing diabolo,Sports & Recreation,Depicts an activity involving a specific skill and equipment.
+302: dart stuck on the target,Sports & Recreation,"Shows a finished result of a darts game, highlighting accuracy."
+303: a person with darts,Sports & Recreation,"Illustrates a person involved in a darts game, focusing on the player."
+304: target with darts,Sports & Recreation,Represents the objective and the process of playing darts.
+305: a person who kneels down to propose to the opposite sex,Social & Relationships,Captures a romantic gesture involving a specific pose and intention.
+306: the person who was proposed to on one knee,Social & Relationships,"Shows the recipient of the romantic proposal, emphasizing the context of the event."
+307: the thing held by the person who proposed on one knee,Social & Relationships,Represents the object of the proposal – typically a ring.
+308: hot air balloon with words on it,Transportation,Illustrates a mode of transport with visual messaging.
+309: hot air balloon landing on the ground,Transportation,"Shows the conclusion of a hot air balloon’s flight, focusing on a specific landing event."
+310: fired hot air balloon,Transportation,Depicts a failure or dramatic event involving a hot air balloon.
+311: a sailboat,Transportation,"Represents a vessel used for sailing, showcasing maritime transport."
+312: a ship on the shore,Transportation,"Illustrates a vessel in a stationary location, representing seafaring and port activity."
+313: a boat with someone rowing on the water,Transportation,"Shows a small vessel propelled by human effort, representing boating activity."
+314: origami that looks like a bird,Art & Craft,Displays a handcrafted object replicating a specific animal form.
+315: origami that looks like an animal,Art & Craft,"Represents a crafted item symbolizing a specific animal, highlighting the artistic skill."
+316: origami that looks like flowers,Abstract Art/Sculpture,"The image depicts a three-dimensional representation of flowers, a distinct artistic form."
+317: horseman without helmet,Still Life/Object Study,"The image focuses on a solitary horseman, devoid of protective gear, presenting a static, object-based scene."
+318: dog not led by ropes outside,Still Life/Object Study,"This image showcases a dog in a setting without a handler or guiding rope, emphasizing a simple object arrangement."
+319: basketball untouched,Still Life/Object Study,"The image presents a basketball in isolation, highlighting its form and texture without any action or context."
+320: dish without any spoons,Still Life/Object Study,"The image presents a dish and cutlery without the expected spoon, creating a minimalist and slightly unsettling composition."
+321: bartender without suit,Still Life/Object Study,"The image depicts a bartender in a setting without a formal suit, simplifying the scene and focusing on the individual."
+322: pot without food,Still Life/Object Study,"This image shows a pot without any contents, highlighting its form and texture in an empty state."
+323: a sofa with no pillow on it in the room,Still Life/Object Study,"The image presents a sofa and its lack of a pillow, creating a simple, object-based composition within a room."
+324: cat not looking directly at the camera in the room,Still Life/Object Study,"The cat is positioned in a room, but avoids direct eye contact with the camera, forming a static scene."
+325: a bed without patterns on it,Still Life/Object Study,"The image showcases a bed lacking any decorative patterns, presenting a basic form of furniture."
+326: a blackboard or whiteboard without any words in the classroom,Still Life/Object Study,"The image presents a blackboard or whiteboard without any written content, focusing on its surface."
+327: a bookshelf without people around,Still Life/Object Study,"The image features a bookshelf devoid of any individuals, generating a quiet and empty composition."
+328: a cake without cream on the surface,Still Life/Object Study,"The image depicts a cake without cream, highlighting its form and texture in an unadorned state."
+329: doughnut with no colored particles on the surface,Still Life/Object Study,"The image focuses on a doughnut with no decorative sprinkles or coloring, showcasing its basic form."
+330: vegetablefree hot dog,Still Life/Object Study,"The image shows a hot dog with no visible toppings, presenting a simple food item in isolation."
+331: a flowerpot without flowers,Absence of Primary Object,The scene depicts an object (flowerpot) intended for a specific purpose (containing flowers) but lacking its key element.
+332: incomplete apple,Partial Object,"The image focuses on a single, unfinished item (apple), highlighting its incomplete state."
+333: toothbrush not in peoples hands,Object Out of Context,"The toothbrush is presented in a setting where it doesn't belong, signifying it’s misplaced or unused."
+334: a chair where no one is sitting in the barber shop,Object in Vacant Setting,The scene showcases an object (chair) within a specific environment (barber shop) but devoid of its intended use (a person sitting).
+335: a toy other than human toys,Alternative Object Category,This refers to a toy that doesn't relate to human figures or representations.
+336: empty shopping cart in the supermarket,Vacant Vehicle,"The image depicts a shopping cart, an object designed for carrying goods, without any items inside."
+337: nonhuman mask,Altered Object Representation,"The image features a mask, a representation of a face, but not a human one."
+338: an unopened refrigerator,Unused Appliance,"This represents a refrigerator, an appliance, yet inactive and without contents."
+339: a watch not on human wrists,Object Out of Context,"The watch is presented in a setting where it doesn't belong, implying it's detached and unused."
+340: hanger without clothes,Vacant Supporting Structure,"This depicts a hanger, an object designed to hold garments, but empty and lacking any clothing."
+341: nonshoulder bag without human body,Alternative Accessory,The image represents a bag (shoulder bag) without a person to wear it.
+342: a fisher who stands on the shore and whose lower body is not submerged by water,Partial Human Representation,"The image presents a human-like figure (fisher) but with a significant portion missing, creating an incomplete representation."
+343: a camera that no one holds,Object Out of Context,"The camera is presented in a setting where it doesn't belong, implying it's unused or abandoned."
+344: an unopened oven,Unused Appliance,"This represents an oven, an appliance, yet inactive and without contents."
+345: a doctor or nurse wearing nongreen clothes,Altered Professional Attire,The image depicts medical professionals (doctor or nurse) with clothing that deviates from their typical attire.
+346: a dancing woman with no knees exposed,Human Activity/Pose,"Depicts a specific human action and body position, focusing on movement and anatomical detail."
+347: unused microphone stand on stage,Stage Equipment,Represents a piece of stage equipment that is present but not in use.
+348: a person who stands on the stage for speech but dont open their mouths,Human Activity/Pose,"Illustrates a human in a static pose, emphasizing a non-verbal action – speaking without opening their mouth."
+349: aircraft not on the ground,Transportation/Environment,"Shows an aircraft in flight, distinct from its typical ground-based context."
+350: a cable car without people inside,Transportation/Environment,"Represents a mode of transport in an empty state, highlighting the vehicle itself rather than its passengers."
+351: a person who didnt land or touch anything on the stage,Human Activity/Pose,"Depicts a human in a stationary pose, signifying a lack of interaction with the stage."
+352: a person who hugs another person but doesnt touch his face,Human Activity/Pose,Illustrates a human action - hugging - but with a key detail: the avoidance of facial contact.
+353: a woman in white wedding dress not beside any men in suits,Social Event/Group,Represents a specific type of event (wedding) and the arrangement of people within that context.
+354: a person in santa claus clothes without bags,Costume/Character,Shows a character in a costume but lacking the expected accessory (the bag).
+355: a person with a pen in one hand but not looking at the paper,Human Activity/Pose,Illustrates a human holding a writing implement but not engaged in the act of writing.
+356: a billiard ball with no numbers or patterns on its surface on the table,Object/Game Equipment,Represents a component of a game (billiards) devoid of its usual markings.
+357: an unoccupied chessboard,Object/Game Equipment,"Shows a game component (chessboard) without players or pieces, emphasizing its structure."
+358: a person at the conference table who is not seated,Human Activity/Pose,"Depicts a person at a table but without being seated, highlighting a static, unusual pose."
+359: a person in cheerleading clothes who is not held in the air,Human Activity/Pose,Illustrates a person in a specific uniform but without being elevated or supported in a typical cheerleading pose.
+360: a baseball player without a cap on his head,Human Activity/Pose/Equipment,Shows a baseball player wearing the uniform but lacking a standard piece of equipment (the cap).
+361: a person wearing football helmets but not running,Movement Restriction,The image depicts a person in athletic gear but not engaging in the typical running action associated with football.
+362: athlete wearing nonwhite stockings on the green field,Unusual Attire,"The image highlights a deviation from standard athletic attire, specifically non-white stockings, within a sporting context."
+363: a person with a tennis racket and no feet left the ground,Action Restriction,The image focuses on a tennis player who is unable to perform the fundamental action of hitting a ball with a racket.
+364: a person standing at the table of table tennis who is not waving table tennis rackets,Action Restriction,This image depicts a table tennis player who is not actively participating in the game’s typical movements.
+365: indoor volleyball not touched by hands,Action Restriction,The image focuses on a volleyball game where the ball isn't being interacted with by players’ hands.
+366: a person who is not standing upright on the ski resort,Posture Restriction,"The image illustrates a person in an abnormal and unstable posture on a ski resort, deviating from upright standing."
+367: surfboard not on the beach,Location Restriction,The image depicts a surfboard in an unusual location away from its typical environment – the beach.
+368: a gymnast who is not touching anything in the air,Action Restriction,The image depicts a gymnast failing to execute a standard aerial movement or interaction within the sport.
+369: an empty swing bench,Absence of Activity,The image showcases an object (swing bench) that is unoccupied and indicates the lack of a specific activity.
+370: an empty swimming pool,Absence of Activity,"The image presents an empty swimming pool, signifying the absence of someone swimming."
+371: a male lion who is not lying,Posture Restriction,"The image depicts a lion in an atypical posture, failing to exhibit the usual lying position."
+372: parrot not on human body,Location Restriction,"The image shows a parrot in an unusual location, not situated on a human body as is often depicted."
+373: camel not lying on the ground,Posture Restriction,"The image displays a camel in a non-traditional posture, differing from the typical lying position."
+374: redcrowned crane not standing on the ground,Posture Restriction,The image presents a crane failing to exhibit the expected upright stance.
+375: giant panda without all four feet on the ground,Posture Restriction,"The image depicts a giant panda in an unusual posture, failing to maintain all four feet on the ground."
+376: an autosalon girl without bare waist,Absence of Explicit Detail,The description specifically excludes a common element (bare waist) typically associated with the scene.
+377: a lion dance that is not upright,Deviation from Norm,The phrase “not upright” indicates a departure from the standard posture of a lion dance.
+378: a rock climber without helmet,Absence of Protective Gear,The exclusion of a helmet highlights a lack of typical safety equipment for rock climbing.
+379: nonburning torch,Absence of Action,"“Nonburning” describes the state of the torch, rather than an action or characteristic."
+380: a butterfly that doesnt stop on flowers,Deviation from Behavior,The description negates the usual behavior of a butterfly landing on flowers.
+381: aircraft flying in the air without smoke trail,Absence of Expected Feature,The lack of a smoke trail is an unusual characteristic for an aircraft in flight.
+382: frisbee not held by anyone,Absence of Human Interaction,The phrase “not held by anyone” removes the element of a person interacting with the frisbee.
+383: golf ball not in the air,Absence of Movement,"The description focuses on the ball’s lack of position in the air, rather than its motion."
+384: helicopter not flying in the air,Absence of Flight,“Not flying in the air” explicitly denies the typical action of a helicopter.
+385: well cover without words on the surface,Absence of Communication,"The phrase denotes the lack of written communication, contradicting a standard visual element."
+386: mailbox not marked with numbers,Absence of Identification,"The description removes a standard feature of a mailbox, preventing identification."
+387: a deer without antlers,Absence of Biological Feature,"The description specifies the absence of antlers, a key characteristic of a deer."
+388: kangaroo not standing,Deviation from Posture,The phrase “not standing” indicates a departure from the typical posture of a kangaroo.
+389: woodpecker not on the side of the trunk,Deviation from Location,The description specifies the absence of the woodpecker’s typical location.
+390: an eagle without wings,Absence of Biological Feature,The description specifies the absence of a key characteristic of an eagle.
+391: a dolphin whose head is not above the water,Absence of typical behavior,The expression describes a dolphin deviating from its natural behavior of surfacing.
+392: a seal not in the water,Absence of typical behavior,The expression describes a seal deviating from its natural behavior of being in the water.
+393: a peacock who is not opening the screen,Absence of typical behavior,The expression describes a peacock deviating from its natural behavior of displaying its plumage.
+394: swan not in the water,Absence of typical behavior,The expression describes a swan deviating from its natural behavior of being in the water.
+395: hippo whose mouth are not open,Absence of typical behavior,The expression describes a hippo deviating from its natural behavior of opening its mouth.
+396: the moon that does not appear completely round,Imperfect representation,The expression describes the moon in a state other than its typical circular appearance.
+397: a person whose eyes are invisible in sunglasses,Obscured features,The expression describes a person with features deliberately hidden by sunglasses.
+398: otter not in the water,Absence of typical behavior,The expression describes an otter deviating from its natural behavior of being in the water.
+399: volleyball in the middle of the air untouched on the beach,Object in an atypical location/state,The expression describes a volleyball in a position and state that is not its typical one on a beach.
+400: a street food truck without an umbrella,Lack of protective equipment,The expression describes a food truck lacking a common protective feature.
+401: a street performer without audience,Lack of interaction,The expression describes a performer without the usual element of an audience.
+402: a person not wearing boxing gloves on the stage,Lack of protective equipment,The expression describes a person not wearing protective equipment for a specific activity.
+403: a sled dog that is not running,Lack of typical movement,The expression describes a dog deviating from its natural behavior of running.
+404: a water polo player who is in the water but does not hold the ball,Object in an atypical state,The expression describes a player and ball in a state that is not their typical one in water polo.
+405: a barbell held by a weightlifter that has not been lifted above the head,Object in an atypical state,The expression describes a weightlifter and bar in a state that is not their typical one in weightlifting.
+406: a kendo athlete without helmet,Absence of Protective Gear,"The image depicts a kendo athlete without the customary helmet, highlighting a lack of protective equipment."
+407: a taekwondo athlete who is not kicking with their feets,Incorrect Technique,The image shows a taekwondo athlete performing a movement that deviates from the standard kicking technique using feet.
+408: kite surfer who didnt touch the water,Absence of Interaction with Environment,"The image portrays a kite surfer who doesn't interact with the water, a key element of the sport."
+409: a door that is not damaged on the damaged car,Disconnected Element,"The image presents a door on a damaged car, demonstrating an incongruous element or anomaly."
+410: a girl with black hair and anime clothes,Stylistic Anomaly,"The image contains a girl wearing anime-style clothing, indicating a deviation from a typical appearance."
+411: a helmeted cyclist without companions in the race,Absence of Contextual Elements,"The image shows a cyclist with a helmet but without any racing companions, creating a sense of isolation."
+412: a person who wears a helmet and sling equipment but is not on the sling,Absence of Use,"The person is equipped with helmet and sling equipment but isn’t using them, suggesting a lack of action."
+413: a person on the yoga mat who is not meditating,Absence of Activity,"The image depicts someone on a yoga mat without engaging in the meditative practice, illustrating a lack of activity."
+414: a person who doesnt touch the rope with both feet,Incorrect Technique,"The image shows someone performing a climbing activity without the correct foot placement, representing an incorrect technique."
+415: nonconvertible racing car,Mechanical Anomaly,"The image shows a racing car that is not convertible, demonstrating a discrepancy in design or functionality."
+416: stop sign with white letters on a blue background,Standard Sign,"The image depicts a standard stop sign, representing a universally recognized traffic control device."
+417: a diabolo not being played with rope,Absence of Activity,"The image shows a diabolo without being played with a rope, illustrating the absence of the necessary component for the activity."
+418: a dart that doesnt stick to the target,Missed Target,"The image displays a dart that fails to hit the intended target, highlighting a lack of accuracy."
+419: person who kneels on one knee and proposes but has nothing in his hand,Absence of Ritual Element,"The image portrays a proposal gesture without the traditional ring, indicating a missing element of the ritual."
+420: hot air balloon without ignition,Absence of Function,"The image shows a hot air balloon without the ignition system, signifying a lack of operational capability."
+421: a boat that needs manual rowing but no one,Abandoned Objects,"The description highlights an object – a boat – that is still present but unused, suggesting a state of disuse and neglect."
+422: origami unlike birds,Abstract Art,"Origami, particularly the specific mention of it being ""unlike birds,"" signifies a departure from naturalistic representation and leans toward a constructed, geometric form."
