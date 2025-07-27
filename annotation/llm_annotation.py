@@ -67,5 +67,4 @@ if __name__ == "__main__":
 
     csv_path = "category_annotations_cleaned.csv"
     model_name = "gemma3"
-    # annotations = annotate_with_ollama(csv_path, modelName=model_name)
     batch_annotate_csv(csv_path, modelName=model_name, batch_size=15)
