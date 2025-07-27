@@ -1,7 +1,0 @@
-1. changed pillow to >10.00
-2. pip install --use-pep517 -r requirements.txt
-3. clone and download all the pretrained models 
-4. icecream install 
-
-
-Virtual envs> LION, ref_env
