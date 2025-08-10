@@ -3,6 +3,16 @@ import pandas as pd
 
 
 def batch_annotate_csv(csv_path, modelName, batch_size=5):
+    """Annotates a CSV file containing text data using a specified LLM model in batches.
+    Args:
+        csv_path (str): Path to the input CSV file containing d-cube data.
+        modelName (str): Name of the LLM model to use for annotation.
+        batch_size (int): Number of rows to process in each batch.
+
+    Returns:
+        None: The function saves the annotated data to a new CSV file.
+    """
+
     client = ollama.Client()
 
     # Annotated data
