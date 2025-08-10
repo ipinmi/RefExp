@@ -21,11 +21,9 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from dcube.dataset.coco_evaluation import (
-    complete_evaluation,
-    evaluate_by_supercategory,
-    evaluate_specific_categories,
-)
+from dcube.dataset.coco_evaluation import complete_evaluation, evaluate_by_supercategory
+
+# -----------------------Inference with QWEN 2.5 VL on D-cube Dataset-----------------------
 
 
 def parse_json(json_bbox):
@@ -241,9 +239,6 @@ def run_inference(
     outputs = []
 
     for i, batch in enumerate(tqdm(dataloader, desc="Starting inference")):
-        # Starting from i = 5378 (where it broke)
-        if i < 5378:
-            continue
 
         texts, hws, image_ids, image_paths = batch
 
@@ -414,6 +409,8 @@ def main(args):
     processor = AutoProcessor.from_pretrained(args.checkpoint)
 
     # Initialize the D3 dataset paths
+    global IMG_ROOT, PKL_ANNO_PATH, GT_PATH, save_path
+
     IMG_ROOT = os.path.join(args.d3_dir, args.img_dir)
     PKL_ANNO_PATH = os.path.join(args.d3_dir, args.pkl_dir)
     GT_PATH = os.path.join(args.d3_dir, args.json_dir)
@@ -463,18 +460,6 @@ def main(args):
 
 
 def eval(args):
-    GT_PATH = os.path.join(args.d3_dir, args.json_dir)
-
-    # Create predictions directory
-    if args.output_dir is None:
-        predictions_dir = os.path.join(args.d3_dir, "predictions")
-    else:
-        predictions_dir = args.output_dir
-
-    save_path = os.path.join(predictions_dir, args.output_name)
-    if not os.path.exists(save_path):
-        print(f"Prediction file {save_path} does not exist. Skipping evaluation.")
-        return
 
     # Evaluate predictions on D3 dataset
     if args.use_supercat:
@@ -486,13 +471,9 @@ def eval(args):
         evaluate_by_supercategory(save_path, GT_PATH, mode="abs")  # Absence evaluation
     else:
         print("Evaluating predictions on combined dataset...")
-        evaluate_specific_categories(save_path, GT_PATH, mode="full")  # Full evaluation
-        evaluate_specific_categories(
-            save_path, GT_PATH, mode="pres"
-        )  # Presence evaluation
-        evaluate_specific_categories(
-            save_path, GT_PATH, mode="abs"
-        )  # Absence evaluation
+        complete_evaluation(save_path, GT_PATH, mode="full")  # Full evaluation
+        complete_evaluation(save_path, GT_PATH, mode="pres")  # Presence evaluation
+        complete_evaluation(save_path, GT_PATH, mode="abs")  # Absence evaluation
 
 
 if __name__ == "__main__":
@@ -513,6 +494,5 @@ python qwen_inference.py \
     --d3_dir "../dcube/dataset" \
     --output_dir "predictions" \
     --output_name "qwen2.5_predictions.json" \
-    --eval True \
-    --use_supercat True
+    --eval False
 """

@@ -6,15 +6,18 @@ from PIL import Image
 import argparse
 import json
 import torch
-import gc
-from pycocotools.coco import COCO
-from pycocotools.cocoeval import COCOeval
 
 
 from models import load_model
 from preprocessors.lion_preprocessors import ImageEvalProcessor
 from d_cube import D3
 
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from dcube.dataset.coco_evaluation import complete_evaluation, evaluate_by_supercategory
 
 # -----------------------Inference with LION on D-cube Dataset-----------------------
 
@@ -174,58 +177,7 @@ def inference_with_lion(img_iter, d_cube, save_path):
         write_predictions(predictions, save_path)
 
 
-def convert_jsonl_to_array(input_path, output_path):
-    """Convert existing JSONL file to proper JSON array"""
-    if output_path is None:
-        output_path = input_path
-
-    predictions = []
-
-    with open(input_path, "r") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                try:
-                    predictions.append(json.loads(line))
-                except json.JSONDecodeError as e:
-                    print(f"Skipping invalid JSON line: {line[:50]}...")
-                    continue
-
-    # Write as proper JSON array
-    with open(output_path, "w") as f:
-        json.dump(predictions, f, indent=2)
-
-
-def eval_on_d3(pred_path, gt_path, mode="full"):
-    """
-    Evaluate predictions on the D3 dataset.
-    Args:
-        pred_path (str): Path to the predictions JSON file.
-        gt_path (str): Path to the ground truth annotations directory.
-        mode (str): Evaluation mode - "full", "pres", or "abs".
-
-    Returns:
-        None: Prints evaluation results to the console.
-    """
-    assert mode in ("full", "pres", "abs")
-    if mode == "full":
-        gt_path = os.path.join(gt_path, "d3_full_annotations.json")
-    elif mode == "pres":
-        gt_path = os.path.join(gt_path, "d3_pres_annotations.json")
-    else:
-        gt_path = os.path.join(gt_path, "d3_abs_annotations.json")
-
-    # Load ground truth and predictions using COCO API
-    coco = COCO(gt_path)
-    d3_res = coco.loadRes(pred_path)
-    cocoEval = COCOeval(coco, d3_res, "bbox")
-    cocoEval.evaluate()
-    cocoEval.accumulate()
-    cocoEval.summarize()
-
-
-if __name__ == "__main__":
-
+def parser_args():
     parser = argparse.ArgumentParser(description="Inference with LION on DCube Dataset")
 
     parser.add_argument(
@@ -267,7 +219,20 @@ if __name__ == "__main__":
         help="Name of the prediction file",
     )
 
-    args = parser.parse_args()
+    return parser.parse_args()
+
+
+def main(args):
+    """
+    Main function to run inference with LION on the D-cube dataset.
+    Args:
+        args (argparse.Namespace): Parsed command line arguments.
+    Returns:
+        None
+    """
+    # Initialize paths from arguments
+    global IMG_ROOT, PKL_ANNO_PATH, GT_PATH, save_path
+
     IMG_ROOT = os.path.join(args.d3_dir, args.img_dir)
     PKL_ANNO_PATH = os.path.join(args.d3_dir, args.pkl_dir)
     GT_PATH = os.path.join(args.d3_dir, args.json_dir)
@@ -302,19 +267,40 @@ if __name__ == "__main__":
         print(f"GPU out of memory: {e}")
         clear_cache()
 
+
+def eval(args):
     # Evaluate predictions on D3 dataset
-    # eval_on_d3(save_path, GT_PATH, mode="full")  # Full evaluation
-    # eval_on_d3(save_path, GT_PATH, mode="pres")  # Presence evaluation
-    # eval_on_d3(save_path, GT_PATH, mode="abs")   # Absence evaluation
+    if args.use_supercat:
+        print("Evaluating predictions by supercategory...")
+        evaluate_by_supercategory(save_path, GT_PATH, mode="full")  # Full evaluation
+        evaluate_by_supercategory(
+            save_path, GT_PATH, mode="pres"
+        )  # Presence evaluation
+        evaluate_by_supercategory(save_path, GT_PATH, mode="abs")  # Absence evaluation
+    else:
+        print("Evaluating predictions on combined dataset...")
+        complete_evaluation(save_path, GT_PATH, mode="full")  # Full evaluation
+        complete_evaluation(save_path, GT_PATH, mode="pres")  # Presence evaluation
+        complete_evaluation(save_path, GT_PATH, mode="abs")  # Absence evaluation
+
+
+if __name__ == "__main__":
+    args = parser_args()
+    main(args)
+
+    if args.eval:
+        eval(args)
+
 
 # Usage:
 # cd JiuTian-LION
-# python lion_inference.py --d3_dir ../dcube/dataset --pkl_dir d3_pkl --img_dir d3_images --json_dir d3_json
-"""python lion_inference.py \
+"""
+python lion_inference.py \
     --d3_dir "../dcube/dataset" \
     --pkl_dir "d3_pkl" \
     --img_dir "d3_images" \
     --json_dir "d3_json" \
     --output_dir "predictions" \
-    --output_name "lion_predictions.json"
+    --output_name "lion_predictions.json" \
+    --eval False 
 """

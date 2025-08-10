@@ -386,7 +386,7 @@
 385;well cover without words on the surface;abs;absent attribute;;
 386;mailbox not marked with numbers;abs;absent attribute;;
 387;a deer without antlers;abs;absent attribute;;
-388;kangaroo not standing;abs;negated action;current state;
+388;kangaroo not standing;abs;negated action;state;
 389;woodpecker not on the side of the trunk;abs;negated spatial;;
 390;an eagle without wings;abs;absent attribute;;
 391;a dolphin whose head is not above the water;abs;negated spatial;;
