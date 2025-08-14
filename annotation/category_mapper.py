@@ -38,7 +38,7 @@ def category_mapper(pkl_path, annot_path):
     return sentences
 
 
-def cocoapi_supercategory(json_path, annot_path, eval_mode="full"):
+def map_visualcat_supercategory(json_path, annot_path, eval_mode="full"):
     """
     Merges visual category annotations into COCO-format category annotations.
 
@@ -112,7 +112,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     pkl_path = f"{args.d3_dir}/{args.pkl_dir}"
     json_path = f"{args.d3_dir}/{args.json_dir}"
-    annotation_path = f"{args.d3_dir}/dcube_annonated.csv"
+    annotation_path = f"{args.d3_dir}/dcube_annotated.csv"
 
     """
     save_path = f"{args.d3_dir}/{args.pkl_dir}/visual_sentences.pkl"
@@ -122,9 +122,9 @@ if __name__ == "__main__":
     with open(save_path, "wb") as f:
         pickle.dump(updated_sents, f, protocol=pickle.HIGHEST_PROTOCOL)
     """
-    
-    cocoapi_supercategory(json_path, annotation_path, eval_mode="full")
-    cocoapi_supercategory(json_path, annotation_path, eval_mode="pres")
-    cocoapi_supercategory(json_path, annotation_path, eval_mode="abs")
+
+    map_visualcat_supercategory(json_path, annotation_path, eval_mode="full")
+    map_visualcat_supercategory(json_path, annotation_path, eval_mode="pres")
+    map_visualcat_supercategory(json_path, annotation_path, eval_mode="abs")
 
 # python3 annotation/category_mapper.py --d3_dir D-cube --pkl_dir d3_pkl --json_dir d3_json

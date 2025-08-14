@@ -11,7 +11,7 @@ Project on Referring Expression Comprehension for Language &amp; Vision seminar 
 ## D-Cube dataset
 
 The Description Detection Dataset ($D^3$) introduces a new task, Described Object
-Detection (DOD), as a superset of two vision-language tasks: Open-Vocabulary Object Detection(OVD) and Referring Expression Comprehension (REC). DOD addresses the limitations of both: unlike OVD, it handles detailed descriptions beyond simple categories, and unlike REC, it can verify the existence of a described object. Full details can be found in the [$D^3$ paper](https://arxiv.org/abs/2307.12813) and repository [here](https://github.com/shikras/d-cube).
+Detection (DOD), as a superset of two vision-language tasks: Open-Vocabulary Object Detection(OVD) and Referring Expression Comprehension (REC). DOD addresses the limitations of both: unlike OVD, it handles detailed descriptions beyond simple categories, and unlike REC, it can verify the existence of a described object. Full details can be found in the [$D^3$ paper](https://arxiv.org/abs/2307.12813) and [repository](https://github.com/shikras/d-cube).
 
 <!-- Add example from dataset -->
 
@@ -68,11 +68,9 @@ We evaluated the following MLLMs on the D-Cube dataset:
 
    ```bash
    python lion_inference.py \
-       --d3_dir {D_CUBE_DIR} \
-       --pkl_dir "d3_pkl" \
-       --img_dir "d3_images" \
-       --json_dir "d3_json" \
-       --output_name "lion_predictions.json"
+      --batch-size 8 \
+      --d3_dir {D_CUBE_DIR} \
+      --output_name "lion_predictions.json" \
    ```
 
 ### QWEN2.5 VL Setup
@@ -120,10 +118,11 @@ Model Card for QWEN2.5 VL series can be found [here](https://huggingface.co/coll
    pip install flash-attn --no-build-isolation
    ```
 
-7. Move inference script `qwen_inference.py` to the root directory of the cloned repository.
+7. Move inference script `qwen_inference.py` and json processing script `fix_json.py` to the root directory of the cloned repository.
 
    ```bash
    mv dcube/inference/qwen_inference.py .
+   mv dcube/inference/fix_json.py .
    ```
 
 8. Inference can be run using the following command:
@@ -134,6 +133,7 @@ Model Card for QWEN2.5 VL series can be found [here](https://huggingface.co/coll
    --use-flash-attention True \
    --d3_dir {D_CUBE_DIR} \
    --output_name "qwen2.5_predictions.json"
+   --eval
    ```
 
 ## Evaluation Results
