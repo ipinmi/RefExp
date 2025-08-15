@@ -3,7 +3,6 @@ D-Cube/
 .DS_Store
 labelled_data/
 d3_*/
-predictions/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
