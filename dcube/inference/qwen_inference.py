@@ -4,24 +4,16 @@ import gc
 import os
 from typing import List, Dict
 from tqdm import tqdm
-import random
-import ast
 import argparse
+from PIL import Image
+
 
 from d_cube import D3
-from PIL import Image
+
 from transformers import (
     Qwen2_5_VLForConditionalGeneration,
-    AutoTokenizer,
     AutoProcessor,
 )
-
-import sys
-import os
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from dcube.dataset.coco_evaluation import complete_evaluation, evaluate_by_supercategory
 
 from fix_json import parse_bbox_response, parse_json
 
@@ -211,30 +203,6 @@ def qwen_inference(
     return output_text[0], input_height, input_width
 
 
-def convert_to_xywh(x1, y1, x2, y2):
-    """
-    Convert top-left and bottom-right corner coordinates to [x,y,width,height] format.
-    """
-    if x1 > x2 or y1 > y2:
-        x1, x2 = min(x1, x2), max(x1, x2)
-        y1, y2 = min(y1, y2), max(y1, y2)
-
-    width = x2 - x1
-    height = y2 - y1
-    return x1, y1, width, height
-
-
-def transform_json_boxes(pred_path):
-    with open(pred_path, "r") as f_:
-        res = json.load(f_)
-    for item in res:
-        item["bbox"] = convert_to_xywh(*item["bbox"])
-    res_path = pred_path.replace(".json", ".xywh.json")
-    with open(res_path, "w") as f_w:
-        json.dump(res, f_w)
-    return res_path
-
-
 def run_inference(
     dataloader: torch.utils.data.DataLoader,
     model: Qwen2_5_VLForConditionalGeneration,
@@ -338,7 +306,7 @@ def parser_args():
     parser.add_argument(
         "--d3_dir",
         type=str,
-        default="dcube",
+        default="dcube/dataset",
         help="Main directory path for D-cube dataset",
     )
     parser.add_argument(
@@ -358,7 +326,7 @@ def parser_args():
     parser.add_argument(
         "--output_dir",
         type=str,
-        default="predictions",
+        default=None,
         help="Directory to save predictions",
     )
     parser.add_argument(
@@ -366,19 +334,6 @@ def parser_args():
         type=str,
         default="qwen_predictions.json",
         help="Name of the prediction file",
-    )
-
-    # Evaluation arguments
-    parser.add_argument(
-        "--eval_only",
-        action="store_true",  # default=False,
-        help="Whether to only evaluate predictions after inference is done.",
-    )
-
-    parser.add_argument(
-        "--use_supercat",
-        action="store_true",  # default=False,
-        help="Whether to evaluate by supercategory",
     )
 
     return parser.parse_args()
@@ -401,13 +356,6 @@ def main(args):
 
     os.makedirs(predictions_dir, exist_ok=True)
     save_path = os.path.join(predictions_dir, args.output_name)
-
-    if args.eval_only:
-        print("Running evaluation only...")
-
-        evaluate_with_d3(args)
-
-        return
 
     # Load the QWEN2.5-VL model
     print(f"Loading model from {args.checkpoint}...")
@@ -466,29 +414,6 @@ def main(args):
         print(f"GPU out of memory: {e}")
         clear_cache()
 
-    # Evaluate predictions after inference
-    evaluate_with_d3(args)
-
-
-def evaluate_with_d3(args):
-    """Evaluate predictions on D3 dataset."""
-
-    pred_path = transform_json_boxes(save_path)  # Convert predictions to xywh format
-    print(f"Transformed predictions saved to {pred_path}")
-
-    if args.use_supercat:
-        print("Evaluating predictions by supercategory...")
-        evaluate_by_supercategory(pred_path, GT_PATH, mode="full")  # Full evaluation
-        evaluate_by_supercategory(
-            pred_path, GT_PATH, mode="pres"
-        )  # Presence evaluation
-        evaluate_by_supercategory(pred_path, GT_PATH, mode="abs")  # Absence evaluation
-    else:
-        print("Evaluating predictions on combined dataset...")
-        complete_evaluation(pred_path, GT_PATH, mode="full")  # Full evaluation
-        complete_evaluation(pred_path, GT_PATH, mode="pres")  # Presence evaluation
-        complete_evaluation(pred_path, GT_PATH, mode="abs")  # Absence evaluation
-
 
 if __name__ == "__main__":
 
@@ -498,22 +423,11 @@ if __name__ == "__main__":
 
 # Usage:
 # cd Qwen2.5VL
-# Only inference:
 """
 python qwen_inference.py \
     --checkpoint "Qwen/Qwen2.5-VL-7B-Instruct-AWQ" \
     --use-flash-attention True \
+    --batch-size 8 \
     --d3_dir "../dcube/dataset" \
     --output_name "qwen2.5_predictions.json" \
-"""
-
-# Inference and evaluation:
-"""
-python qwen_inference.py \
-    --checkpoint "Qwen/Qwen2.5-VL-7B-Instruct-AWQ" \
-    --use-flash-attention True \
-    --d3_dir "../dcube/dataset" \
-    --output_name "qwen2.5_predictions.json" \
-    --eval_only \
-    --use_supercat \
 """

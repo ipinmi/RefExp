@@ -13,16 +13,6 @@ from models import load_model
 from preprocessors.lion_preprocessors import ImageEvalProcessor
 from d_cube import D3
 
-import sys
-import os
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from dcube.dataset.coco_evaluation import (
-    complete_evaluation,
-    evaluate_by_supercategory,
-    run_category_mapping,
-)
 
 # -----------------------Inference with LION on D-cube Dataset-----------------------
 
@@ -50,21 +40,6 @@ def write_predictions(preds, path):
 
 
 # -------------------------Image Iterator for D-cube Dataset-----------------------
-def get_image_iter(d_cube):
-    """
-    Create an iterator for images in the D-cube dataset.
-
-    Args:
-        d_cube (D3): An instance of the D3 dataset class.
-    Returns:
-        img_iter (iterable): An iterator yielding tuples of (image_id, image_path).
-    """
-    img_ids = d_cube.get_img_ids()
-    for img_id in img_ids:
-        img_info = d_cube.load_imgs(img_id)[0]
-        file_name = img_info["file_name"]
-        img_path = os.path.join(IMG_ROOT, file_name)
-        yield img_id, img_path
 
 
 def collate_fn(batches):
@@ -154,42 +129,6 @@ class DCubeDataset(torch.utils.data.Dataset):
 
 
 # -------------------------Inference Function for LION-------------------------
-def convert_to_xywh(x1, y1, x2, y2):
-    """
-    Convert top-left and bottom-right corner coordinates to [x,y,width,height] format.
-    """
-    # if x1 > x2 or y1 > y2:
-    #    x1, x2 = min(x1, x2), max(x1, x2)
-    #    y1, y2 = min(y1, y2), max(y1, y2)
-
-    width = x2 - x1
-    height = y2 - y1
-    return x1, y1, width, height
-
-
-def transform_json_boxes(pred_path):
-    with open(pred_path, "r") as f_:
-        res = json.load(f_)
-    for item in res:
-        item["bbox"] = convert_to_xywh(*item["bbox"])
-    res_path = pred_path.replace(".json", ".xywh.json")
-    with open(res_path, "w") as f_w:
-        json.dump(res, f_w)
-    return res_path
-
-
-def get_true_bbox(img_size, bbox):
-    width, height = img_size
-    max_edge = max(height, width)
-    bbox = [v * max_edge for v in bbox]
-    diff = abs(width - height) // 2
-    if height < width:
-        bbox[1] -= diff
-        bbox[3] -= diff
-    else:
-        bbox[0] -= diff
-        bbox[2] -= diff
-    return bbox
 
 
 def inference_with_lion(dataloader, model, preprocessor, save_every=50, save_path=None):
@@ -240,12 +179,14 @@ def inference_with_lion(dataloader, model, preprocessor, save_every=50, save_pat
 
             # Extract the bounding box coordinates from the output
             bounding_boxes = re.search(r"\[([0-9., ]+)\]", output[0]).group(1)
-            bounding_boxes = eval(bounding_boxes)  # Convert string to list/tuple
-            # bounding_boxes = list(map(float, bounding_boxes))
+            bounding_boxes = eval(bounding_boxes)  # Convert string to tuple of floats
 
-            # bbox = get_true_bbox(img.size, bounding_boxes)
-
-            x1, y1, x2, y2 = bounding_boxes
+            x1, y1, x2, y2 = [
+                bounding_boxes[0] * img.width,
+                bounding_boxes[1] * img.height,
+                bounding_boxes[2] * img.width,
+                bounding_boxes[3] * img.height,
+            ]
             # Convert to absolute coordinates
             abs_x1, abs_y1, abs_x2, abs_y2 = map(int, [x1, y1, x2, y2])
 
@@ -288,7 +229,7 @@ def parser_args():
     parser.add_argument(
         "--d3_dir",
         help="Main Directory path for D-cube dataset.",
-        default="../dcube/dataset",
+        default="dcube/dataset",
         required=True,
     )
 
@@ -324,19 +265,13 @@ def parser_args():
         help="Name of the prediction file",
     )
 
-    # Evaluation arguments
+    # Model arguments
     parser.add_argument(
-        "--eval_only",
-        action="store_true",  # default=False,
-        help="Whether to only evaluate predictions after inference is done.",
+        "--model_type",
+        type=str,
+        default="flant5xl",
+        help="Name of the model to use for inference. Options: flant5xxl for lion 12B, flant5xl for lion 4B",
     )
-
-    parser.add_argument(
-        "--use_supercat",
-        action="store_true",  # default=False,
-        help="Whether to evaluate by supercategory",
-    )
-
     return parser.parse_args()
 
 
@@ -354,13 +289,6 @@ def main(args):
     IMG_ROOT = os.path.join(args.d3_dir, args.img_dir)
     PKL_ANNO_PATH = os.path.join(args.d3_dir, args.pkl_dir)
     GT_PATH = os.path.join(args.d3_dir, args.json_dir)
-    ANNOT_PATH = os.path.join(
-        args.d3_dir, "dcube_annotated.csv"
-    )  # Path to the CSV file containing visual categories annotations
-
-    if not os.path.exists(ANNOT_PATH):
-        print(f"Annotation file does not exist: {ANNOT_PATH}. Please check the path.")
-        return
 
     # Create predictions directory if it doesn't exist
     if args.output_dir is None:
@@ -371,18 +299,8 @@ def main(args):
     os.makedirs(predictions_dir, exist_ok=True)
     save_path = os.path.join(predictions_dir, args.output_name)
 
-    # Create visual supercategories if not already created
-    run_category_mapping(GT_PATH, ANNOT_PATH)
-
-    if args.eval_only:
-        print("Running evaluation only...")
-
-        evaluate_with_d3(args)
-
-        return
-
     # Load the LION model and preprocessor
-    lion_model = load_model("lion_t5", "flant5xl", is_eval=True, device="cuda:0")
+    lion_model = load_model("lion_t5", args.model_type, is_eval=True, device="cuda:0")
 
     # Initialize the preprocessor for image evaluation
     lion_preprocessor = ImageEvalProcessor()
@@ -424,27 +342,6 @@ def main(args):
         print(f"GPU out of memory: {e}")
         clear_cache()
 
-    evaluate_with_d3(args)  # Evaluate predictions after inference
-
-
-def evaluate_with_d3(args):
-    """Evaluate predictions on D3 dataset"""
-    pred_path = transform_json_boxes(save_path)  # Convert predictions to xywh format
-    print(f"Transformed predictions saved to {pred_path}")
-
-    if args.use_supercat:
-        print("Evaluating predictions by supercategory...")
-        evaluate_by_supercategory(pred_path, GT_PATH, mode="full")  # Full evaluation
-        evaluate_by_supercategory(
-            pred_path, GT_PATH, mode="pres"
-        )  # Presence evaluation
-        evaluate_by_supercategory(pred_path, GT_PATH, mode="abs")  # Absence evaluation
-    else:
-        print("Evaluating predictions on combined dataset...")
-        complete_evaluation(pred_path, GT_PATH, mode="full")  # Full evaluation
-        complete_evaluation(pred_path, GT_PATH, mode="pres")  # Presence evaluation
-        complete_evaluation(pred_path, GT_PATH, mode="abs")  # Absence evaluation
-
 
 if __name__ == "__main__":
     args = parser_args()
@@ -453,19 +350,9 @@ if __name__ == "__main__":
 
 # Usage:
 # cd JiuTian-LION
-# Only inference:
 """
 python lion_inference.py \
     --batch-size 8 \
     --d3_dir "../dcube/dataset" \
     --output_name "lion_predictions.json" \
-"""
-
-# With only evaluation:
-"""python lion_inference.py \
-    --batch-size 8 \
-    --d3_dir "../dcube/dataset" \
-    --output_name "lion_predictions.json" \
-    --eval_only  \
-    --use_supercat  \
 """

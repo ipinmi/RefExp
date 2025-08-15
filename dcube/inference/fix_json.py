@@ -1,7 +1,7 @@
 import json
 import re
 import ast
-from typing import Union, List, Dict, Any
+from typing import List, Dict, Any
 
 
 def parse_json(json_bbox: str) -> str:
